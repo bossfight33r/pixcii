@@ -89,7 +89,7 @@ class PixciiPlayer:
         return str(k) if k else None
 
     def restore_terminal(self):
-        sys.stdout.write(self.term.normal + "\x1b]2;Terminal\x07\n")
+        sys.stdout.write(self.term.normal + self.term.clear + "\x1b]2;Terminal\x07")
         sys.stdout.flush()
 
     def _draw_sidebar(self):
